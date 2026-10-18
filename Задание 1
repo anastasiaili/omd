@@ -1,0 +1,41 @@
+moscow = {201, 202, 203, 204}
+kazan = {203, 204, 205, 206}
+
+#что можно забрать в любом из двух городов
+def moscow_and_kazan(moscow, kazan):
+    res = []
+    for item in moscow:
+        if item in kazan:
+            res.append(item)
+    return res
+
+#что есть только в Москве
+def only_moscow(moscow, kazan):
+    res = []
+    for item in moscow:
+        if item not in kazan:
+            res.append(item)
+    return res
+
+#что есть только в Казани
+def only_kazan(moscow, kazan):
+    res = []
+    for item in kazan:
+        if item not in moscow:
+            res.append(item)
+    return res
+
+#сколько разных товаров на обоих складах вместе
+def all_products(moscow, kazan):
+    res = set()
+    for item in moscow:
+        res.add(item)
+    for item in kazan:
+        res.add(item)
+    return len(res)
+
+
+print(moscow_and_kazan(moscow, kazan))
+print(only_moscow(moscow, kazan))
+print(only_kazan(moscow, kazan))
+print(all_products(moscow, kazan))
